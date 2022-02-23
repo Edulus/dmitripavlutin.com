@@ -12,18 +12,19 @@ type: post
 
 ## 1. The mystery of this
 
-`this` keyword has been a mystery for me for a long time. 
+`this` keyword has been a mystery to me for a long time. 
 
-From a background like Java, PHP or other *standard* language, [`this`](https://en.wikipedia.org/wiki/This_(computer_programming)) is the instance of the current object in the class method. `this` cannot be used outside the method and such a simple approach does not create confusion. 
+In *standard* languages (ex. Java & PHP), [`this`](https://en.wikipedia.org/wiki/This_(computer_programming)) is the instance of the current object in the class method. `this` cannot be used outside the method. Such a simple approach does not create confusion. 
 
-In JavaScript the situation is different: `this` is the context of a function invocation (a.k.a. exection). The language has 4 function invocation types:  
+In JavaScript, the situation is different: `this` is the context of a function invocation (a.k.a. execution). 
 
- * function invocation: `alert('Hello World!')`
- * method invocation: `console.log('Hello World!')`
- * constructor invocation: `new RegExp('\\d')`
- * indirect invocation: `alert.call(undefined, 'Hello World!')`
+JavaScript has 4 function invocation types:  
+ * function: `alert('Hello World!')`
+ * method: `console.log('Hello World!')`
+ * constructor: `new RegExp('\\d')`
+ * indirect: `alert.call(undefined, 'Hello World!')`
 
-Each invocation type defines the context in its way, so `this` behaves differently than the developer expects. 
+Each invocation type defines the context in its own way, so `this` may behave differently than what the developer expects. 
 
 ![The mystery of this in JavaScript](./images/Gentle-explanation-of-this--7--1.png)
 
